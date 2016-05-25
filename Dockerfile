@@ -10,3 +10,4 @@ RUN  dpkg -i snapclient_${snapcast_version}_amd64.deb \
   && apt-get -f install -y \
   && rm -rf /var/lib/apt/lists/*
 ENTRYPOINT ["snapclient"]
+CMD ["-h", "snapserver"]
