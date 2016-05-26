@@ -7,4 +7,4 @@ RUN  apt-get update \
   && rm -rf /var/lib/apt/lists/*
 VOLUME ["~/Downloads"]
 EXPOSE 9091
-ENTRYPOINT ["service", "transmission-daemon", "start"]
+ENTRYPOINT ["transmission-daemon", "-f"]
