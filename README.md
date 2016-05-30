@@ -4,4 +4,4 @@ By default, the client connects to "snapserver", so if you already have a snapse
 container running with `--name snapserver`, the client should connect to it. To play
 audio, the client needs access to the sound device, so you must give it access when
 running the container
-docker run --rm --name snapclient --device=/dev/snd:/dev/snd snapclient
+docker run --rm --name snapclient --net=snapcast_nw --device=/dev/snd snapclient
