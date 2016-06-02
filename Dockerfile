@@ -7,9 +7,13 @@ RUN  wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/jessi
 RUN  apt-get update \
   && apt-get install -y \
      mopidy \
-  && rm -rf /var/lib/apt/lists/*
+     mopidy-spotify
+RUN  apt-get install -y \
+     python-pip
+RUN  pip install Mopidy-Moped
 
 COPY mopidy.conf /root/.config/mopidy/mopidy.conf
+COPY mopidy.sh /usr/local/bin/mopidy.sh
 
 EXPOSE 6600 6680
-ENTRYPOINT ["mopidy"]
+ENTRYPOINT ["/usr/local/bin/mopidy.sh"]
