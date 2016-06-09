@@ -7,7 +7,9 @@ RUN  wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/jessi
 RUN  apt-get update \
   && apt-get install -y \
      mopidy \
-     mopidy-spotify
+     mopidy-spotify \
+     mopidy-tunein \
+     mopidy-scrobbler
 RUN  apt-get install -y \
      python-pip
 RUN  pip install Mopidy-Moped
