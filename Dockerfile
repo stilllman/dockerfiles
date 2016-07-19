@@ -1,3 +1,12 @@
+# Run with
+#  docker run --rm --name mopidy 
+#             -p 6680:6680 -p 6600:6600 
+#             -e SPOTIFY_USERNAME -e SPOTIFY_PASSWORD 
+#             -e LASTFM_USERNAME -e LASTFM_PASSWORD
+#             -v /tmp/snapcast:/tmp 
+#             stilllman/mopidy --snapcast
+
+
 FROM debian:jessie
 RUN  apt-get update
 RUN  apt-get install -y \
