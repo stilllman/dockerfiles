@@ -1,3 +1,10 @@
+# docker run --rm
+#            --name snapserver 
+#            -p 1704:1704 -p 1705:1705
+#            -v /tmp/snapcast:/tmp
+#            stilllman/docker-snapserver
+
+
 FROM debian:jessie
 RUN  apt-get update \
   && apt-get install wget -y \
