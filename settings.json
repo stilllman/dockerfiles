@@ -1,0 +1,8 @@
+{
+    "alt-speed-up": 50,
+    "alt-speed-down": 50,
+    "rpc-authentication-required": @TRANSMISSION_ENABLED@,
+    "rpc-password": @TRANSMISSION_PASSWORD@,
+    "rpc-username": @TRANSMISSION_USERNAME@,
+    "rpc-whitelist-enabled": false
+}
