@@ -1,5 +1,6 @@
 version: '2'
 services:
+  
   snapserver:
 #    image: stilllman/snapserver:latest
     build: ../snapserver
@@ -35,11 +36,37 @@ services:
       - "/usr/local/bin/mopidy.sh"
       - "--snapcast"
 
+
   transmission:
     build: ../transmission
     ports:
       - "9091:9091"
 
+
+  influxdb:
+    image: influxdb:alpine
+    ports:
+      - 8083:8083
+      - 8086:8086
+    networks:
+      - influxdb_nw
+    volumes:
+      - /home/influxdb:/var/lib/influxdb
+
+  telegraf:
+    build: ../telegraf
+    networks:
+      - influxdb_nw
+
+  grafana:
+    image: grafana/grafana
+    ports: 
+      - 3000:3000
+    networks:
+      - influxdb_nw
+
+
 networks:
   snapcast_nw:
+  influxdb_nw:
     
