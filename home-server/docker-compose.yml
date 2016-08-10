@@ -1,35 +1,34 @@
 version: '2'
+
+networks:
+  snapcast_nw:
+  influxdb_nw:
+
+volumes:
+  snapcast:
+
 services:
-  
   snapserver:
-#    image: stilllman/snapserver:latest
-    build: ../snapserver
-    ports:
-      - "1704:1704"
-      - "1705:1705"
+    image: stilllman/snapserver:latest
     networks:
       - snapcast_nw 
     volumes:
-      - /tmp/snapcast:/tmp
+      - snapcast:/tmp
 
   snapclient:
-#    image: stilllman/snapclient:latest
-    build: ../snapclient
+    image: stilllman/snapclient:latest
     networks:
       - snapcast_nw
     devices:
       - /dev/snd
 
   mopidy:
-    build: ../mopidy
-    ports:
-      - "6600:6600"
-      - "6680:6680"
+    image: stilllman/mopidy:latest
     volumes:
-      - /tmp/snapcast:/tmp
+      - snapcast:/tmp
     environment:
-#      - SPOTIFY_USERNAME
-#      - SPOTIFY_PASSWORD
+      - SPOTIFY_USERNAME
+      - SPOTIFY_PASSWORD
       - LASTFM_USERNAME
       - LASTFM_PASSWORD
     entrypoint:
@@ -38,35 +37,24 @@ services:
 
 
   transmission:
-    build: ../transmission
-    ports:
-      - "9091:9091"
+    image: stilllman/transmission:latest
 
 
   influxdb:
     image: influxdb:alpine
-    ports:
-      - 8083:8083
-      - 8086:8086
     networks:
       - influxdb_nw
-    volumes:
-      - /home/influxdb:/var/lib/influxdb
 
   telegraf:
-    build: ../telegraf
+    image: stilllman/telegraf:latest
     networks:
       - influxdb_nw
 
   grafana:
     image: grafana/grafana
-    ports: 
-      - 3000:3000
     networks:
       - influxdb_nw
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD
 
-
-networks:
-  snapcast_nw:
-  influxdb_nw:
     

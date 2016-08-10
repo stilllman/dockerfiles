@@ -1,0 +1,37 @@
+version: '2'
+
+services:
+  snapserver:
+    build: ../snapserver
+    ports:
+      - "1704:1704"
+      - "1705:1705"
+
+  snapclient:
+    build: ../snapclient
+
+  mopidy:
+    build: ../mopidy
+    ports:
+      - "6600:6600"
+      - "6680:6680"
+
+  transmission:
+    build: ../transmission
+    ports:
+      - "9091:9091"
+
+
+  influxdb:
+    ports:
+      - 8083:8083
+      - 8086:8086
+    volumes:
+      - /home/influxdb:/var/lib/influxdb
+
+  telegraf:
+    build: ../telegraf
+
+  grafana:
+    ports: 
+      - 3000:3000
