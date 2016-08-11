@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ -n "$TRANSMISSION_USERNAME" ] && [ -n "$TRANSMISSION_PASSWORD" ]; then
     echo "Setting rpc authentication..."
