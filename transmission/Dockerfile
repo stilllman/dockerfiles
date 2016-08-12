@@ -5,7 +5,7 @@ RUN apk add --no-cache transmission transmission-cli transmission-daemon
 COPY settings.json /root/.config/transmission-daemon/settings.json
 COPY transmission.sh /transmission.sh
 
-VOLUME ["~/Downloads"]
+VOLUME ["/root/Downloads"]
 
 EXPOSE 9091
 
