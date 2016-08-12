@@ -15,13 +15,6 @@ services:
     volumes:
       - snapcast:/tmp
 
-  snapclient:
-    image: stilllman/snapclient:latest
-    networks:
-      - snapcast_nw
-    devices:
-      - /dev/snd
-
   mopidy:
     image: stilllman/mopidy:latest
     volumes:

@@ -8,7 +8,12 @@ services:
       - "1705:1705"
 
   snapclient:
+    image: stilllman/snapclient:latest
     build: ../snapclient
+    networks:
+      - snapcast_nw
+    devices:
+      - /dev/snd
 
   mopidy:
     build: ../mopidy
