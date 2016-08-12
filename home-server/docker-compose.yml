@@ -47,6 +47,8 @@ services:
 
   telegraf:
     image: stilllman/telegraf:latest
+    volumes:
+      - /var/run/:/var/run/:ro
     networks:
       - influxdb_nw
 
