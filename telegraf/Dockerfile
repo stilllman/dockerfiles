@@ -7,6 +7,7 @@ RUN  apk --no-cache add --virtual .build-deps gcc go git make musl-dev \
   && cd /home/go/src/github.com/influxdata/telegraf \
   && make \
   && cp -a /home/go/bin/telegraf /usr/bin/ \
+  && rm -rf /home/go \
   && apk del .build-deps
 
 COPY telegraf.conf /etc/telegraf/telegraf.conf
