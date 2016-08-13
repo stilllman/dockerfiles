@@ -50,7 +50,5 @@ services:
     image: grafana/grafana
     networks:
       - influxdb_nw
-    environment:
-      - GF_SECURITY_ADMIN_PASSWORD
 
     
