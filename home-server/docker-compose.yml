@@ -51,4 +51,7 @@ services:
     networks:
       - influxdb_nw
 
-    
+  samba:
+    image: stilllman/samba
+    environment:
+      - SAMBA_PASSWORD

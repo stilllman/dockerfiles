@@ -33,6 +33,13 @@ services:
     restart: always
     env_file: grafana.env
 
+  samba:
+    ports:
+      - "137-139:137-139"
+    volumes:
+      - /mnt/data:/data
+    restart: always
+
   logspout:
     image: gliderlabs/logspout
     volumes:
@@ -41,4 +48,3 @@ services:
       - /bin/logspout
       - syslog://logs4.papertrailapp.com:39618
     restart: always
-
