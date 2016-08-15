@@ -36,6 +36,7 @@ services:
   samba:
     ports:
       - "137-139:137-139"
+      - "145:145"
     volumes:
       - /mnt/data:/data
     restart: always
