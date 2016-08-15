@@ -41,8 +41,9 @@ services:
   telegraf:
     image: stilllman/telegraf:latest
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /var/run/utmp:/var/run/utmp:ro
+       - /var/run:/var/run:ro
+#      - /var/run/docker.sock:/var/run/docker.sock:ro
+#      - /var/run/utmp:/var/run/utmp:ro
     networks:
       - influxdb_nw
 
