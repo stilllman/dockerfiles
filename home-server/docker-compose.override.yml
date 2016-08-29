@@ -42,6 +42,14 @@ services:
       - "3000:3000"
 
   samba:
-    build: ../samba
     ports:
       - "137-139:137-139"
+    volumes:
+      - /home/osboxes/Videos:/data
+    entrypoint:
+      - samba.sh
+      - -n
+      - -s
+      - data;/data;yes;no;no;samba;none
+      - -u
+      - samba;foobar

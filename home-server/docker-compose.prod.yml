@@ -39,6 +39,13 @@ services:
       - "145:145"
     volumes:
       - /mnt/data:/data
+    entrypoint:
+      - samba.sh
+      - -n
+      - -s
+      - data;/data;yes;no;no;samba;none
+      - -u
+      - samba;${SAMBA_PASSWORD}
     restart: always
 
   logspout:
