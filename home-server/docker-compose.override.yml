@@ -25,6 +25,8 @@ services:
     build: ../transmission
     ports:
       - "9091:9091"
+    volumes:
+      - /tmp/transmission-docker:/root/Downloads
 
 
   influxdb:
