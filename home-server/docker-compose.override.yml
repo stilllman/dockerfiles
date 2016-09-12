@@ -55,3 +55,9 @@ services:
       - data;/data;yes;no;no;samba;none
       - -u
       - samba;foobar
+
+  owncloud:
+    ports: 
+      - "8080:80"
+    volumes:
+      - /home/osboxes/Videos:/data

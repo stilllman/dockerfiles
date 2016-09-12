@@ -50,6 +50,12 @@ services:
       - samba;${SAMBA_PASSWORD}
     restart: always
 
+  owncloud:
+    ports: 
+      - "1258:80"
+    volumes:
+      - /mnt/data:/data
+
   logspout:
     image: gliderlabs/logspout
     volumes:
