@@ -17,7 +17,7 @@ services:
     ports:
       - "9091:9091"
     volumes:
-      - /mnt/data:/root/~Downloads
+      - /mnt/data:/root/Downloads
     restart: always
 
   influxdb:
