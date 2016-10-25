@@ -1,0 +1,12 @@
+[submodule "docker-transmission"]
+	path = docker-transmission
+	url = git@github.com:stilllman/docker-transmission
+[submodule "docker-sickrage"]
+	path = docker-sickrage
+	url = git@github.com:stilllman/docker-sickrage-1
+[submodule "docker-plex"]
+	path = docker-plex
+	url = git@github.com:stilllman/docker-plex-1
+[submodule "docker-nextcloud"]
+	path = docker-nextcloud
+	url = git@github.com:stilllman/docker-nextcloud
