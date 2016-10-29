@@ -32,6 +32,11 @@ services:
   transmission:
     image: stilllman/transmission:latest
 
+  plex:
+    image: stilllman/plex:latest
+    network_mode: host
+    environment:
+      - VERSION=latest
 
   influxdb:
     image: influxdb:alpine

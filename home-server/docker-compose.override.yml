@@ -28,6 +28,10 @@ services:
     volumes:
       - /tmp/transmission-docker:/root/Downloads
 
+  plex:
+    build: ../docker-plex
+    volumes:
+      - /home/osboxes/data/videos:/data/series
 
   influxdb:
     ports:

@@ -20,6 +20,15 @@ services:
       - /mnt/data:/root/Downloads
     restart: always
 
+  plex:
+    volumes:
+      - /mnt/data/appdata/plex/config:/config
+      - /mnt/data/series:/data/series
+      - /mnt/data/films:/data/films
+      - /mnt/data/photos:/data/photos
+      - /mnt/data/videos:/data/videos
+    restart: always
+
   influxdb:
     ports:
       - "8083:8083"
