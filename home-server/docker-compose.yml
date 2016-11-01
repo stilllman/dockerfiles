@@ -43,6 +43,12 @@ services:
       - PUID
       - PGID
 
+  sickrage:
+    image: stilllman/sickrage:latest
+    environment:
+      - PUID
+      - PGID
+
   influxdb:
     image: influxdb:alpine
     networks:

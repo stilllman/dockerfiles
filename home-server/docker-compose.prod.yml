@@ -19,7 +19,7 @@ services:
       - "51413:51413"
     volumes:
       - /home/rancher/appdata/transmission:/config
-      - /mnt/data:/downloads
+      - /mnt/data/downloads:/downloads
     restart: always
 
   plex:
@@ -29,6 +29,15 @@ services:
       - /mnt/data/films:/data/films
       - /mnt/data/photos:/data/photos
       - /mnt/data/videos:/data/videos
+    restart: always
+
+  sickrage:
+    ports:
+      - "8081:8081"
+    volumes:
+      - /home/rancher/appdata/sickrage:/config
+      - /mnt/data/downloads:/downloads
+      - /mnt/data/series:/tv
     restart: always
 
   influxdb:

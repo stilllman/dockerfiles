@@ -33,6 +33,14 @@ services:
     volumes:
       - /home/osboxes/data/videos:/data/series
 
+  sickrage:
+    build: ../docker-sickrage
+    ports:
+      - "8081:8081"
+    volumes:
+      - /home/osboxes/data/videos:/tv
+      - /home/osboxes/data/downloads:/downloads
+
   influxdb:
     ports:
       - "8083:8083"
