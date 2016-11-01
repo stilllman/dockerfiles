@@ -16,13 +16,15 @@ services:
   transmission:
     ports:
       - "9091:9091"
+      - "51413:51413"
     volumes:
-      - /mnt/data:/root/Downloads
+      - /home/rancher/appdata/transmission:/config
+      - /mnt/data:/downloads
     restart: always
 
   plex:
     volumes:
-      - /home/rancher/appdata/plex/config:/config
+      - /home/rancher/appdata/plex:/config
       - /mnt/data/series:/data/series
       - /mnt/data/films:/data/films
       - /mnt/data/photos:/data/photos

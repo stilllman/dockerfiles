@@ -31,12 +31,17 @@ services:
 
   transmission:
     image: stilllman/transmission:latest
+    environment:
+      - PUID
+      - PGID
 
   plex:
     image: stilllman/plex:latest
     network_mode: host
     environment:
       - VERSION=latest
+      - PUID
+      - PGID
 
   influxdb:
     image: influxdb:alpine
