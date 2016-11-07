@@ -20,6 +20,7 @@ services:
     volumes:
       - /home/rancher/appdata/transmission:/config
       - /mnt/data/downloads:/downloads
+      - /mnt/data/series:/tv # must be the same as sickrage
     restart: always
 
   plex:
@@ -37,7 +38,7 @@ services:
     volumes:
       - /home/rancher/appdata/sickrage:/config
       - /mnt/data/downloads:/downloads
-      - /mnt/data/series:/tv
+      - /mnt/data/series:/tv # must be the same as transmission
     restart: always
 
   influxdb:
