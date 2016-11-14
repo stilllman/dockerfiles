@@ -56,6 +56,11 @@ services:
     restart: always
     env_file: grafana.env
 
+  keeweb:
+    ports:
+      - "80:1234"
+      - "443:1235"
+
   samba:
     ports:
       - "137-139:137-139"

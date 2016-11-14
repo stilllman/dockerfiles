@@ -55,6 +55,11 @@ services:
     ports: 
       - "3000:3000"
 
+  keeweb:
+    ports:
+      - "80:1234"
+      - "443:1235"
+
   samba:
     ports:
       - "137-139:137-139"
