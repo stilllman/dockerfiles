@@ -71,7 +71,7 @@ services:
       - -s
       - data;/data;yes;no;no;samba;none
       - -u
-      - samba;foobar
+      - samba;foobar;1005
 
   owncloud:
     ports: 
