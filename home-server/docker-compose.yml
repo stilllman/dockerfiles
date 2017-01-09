@@ -83,6 +83,9 @@ services:
   samba:
     image: dperson/samba
     network_mode: host
+    environment:
+      - USERID=${PUID}
+      - GROUPID=${PGID}
 
   owncloud:
     image: owncloud
