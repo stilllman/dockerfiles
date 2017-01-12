@@ -60,6 +60,7 @@ services:
     ports:
       - "1234:80"
       - "1235:443"
+    restart: always
 
   samba:
     ports:
@@ -73,7 +74,7 @@ services:
       - -s
       - data;/data;yes;no;no;samba;none
       - -u
-      - samba;${SAMBA_PASSWORD};${PUID}
+      - samba;${SAMBA_PASSWORD}
     restart: always
 
   owncloud:
@@ -81,6 +82,12 @@ services:
       - "1258:80"
     volumes:
       - /mnt/data:/data
+    restart: always
+
+  lychee:
+    ports:
+      - "1259:80"
+    restart: always
 
   logspout:
     image: gliderlabs/logspout

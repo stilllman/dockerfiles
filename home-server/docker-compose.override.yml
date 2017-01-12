@@ -78,3 +78,7 @@ services:
       - "8080:80"
     volumes:
       - /home/osboxes/Videos:/data
+
+  lychee:
+    ports:
+      - "8087:80"
