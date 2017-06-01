@@ -49,6 +49,12 @@ services:
       - PUID
       - PGID
 
+  couchpotato:
+    image: linuxserver/couchpotato:latest
+    environment:
+      - PUID
+      - PGID
+
   influxdb:
     image: influxdb:alpine
     networks:

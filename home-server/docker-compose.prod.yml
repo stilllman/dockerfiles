@@ -21,6 +21,7 @@ services:
       - /home/rancher/appdata/transmission:/config
       - /mnt/data/downloads:/downloads
       - /mnt/data/series:/tv # must be the same as sickrage
+      - /mnt/data/films:/movies # must be the same as couchpotato
     restart: always
 
   plex:
@@ -39,6 +40,15 @@ services:
       - /home/rancher/appdata/sickrage:/config
       - /mnt/data/downloads:/downloads
       - /mnt/data/series:/tv # must be the same as transmission
+    restart: always
+
+  couchpotato:
+    ports:
+      - "5050:5050"
+    volumes:
+      - /home/rancher/appdata/couchpotato:/config
+      - /mnt/data/downloads:/downloads
+      - /mnt/data/films:/movies # must be the same as transmission
     restart: always
 
   influxdb:

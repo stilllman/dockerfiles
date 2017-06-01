@@ -41,6 +41,13 @@ services:
       - /home/osboxes/data/videos:/tv
       - /home/osboxes/data/downloads:/downloads
 
+  couchpotato:
+    ports:
+      - "5050:5050"
+    volumes:
+      - /home/osboxes/data/films:/movies
+      - /home/osboxes/data/downloads:/downloads
+
   influxdb:
     ports:
       - "8083:8083"
