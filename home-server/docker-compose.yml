@@ -90,5 +90,5 @@ services:
   owncloud:
     image: owncloud
 
-  lychee:
-    image: kdelfour/lychee-docker:latest
+#  lychee:
+#    image: kdelfour/lychee-docker:latest

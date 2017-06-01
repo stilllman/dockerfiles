@@ -84,10 +84,10 @@ services:
       - /mnt/data:/data
     restart: always
 
-  lychee:
-    ports:
-      - "1259:80"
-    restart: always
+#  lychee:
+#    ports:
+#      - "1259:80"
+#    restart: always
 
   logspout:
     image: gliderlabs/logspout
