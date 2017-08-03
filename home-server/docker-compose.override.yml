@@ -80,11 +80,11 @@ services:
       - -u
       - samba;foobar;1005
 
-  owncloud:
+  nextcloud:
     ports: 
-      - "8080:80"
+      - "443:443"
     volumes:
-      - /home/osboxes/Videos:/data
+      - /home/osboxes/Videos:/local-data
 
 #  lychee:
 #    ports:

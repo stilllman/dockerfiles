@@ -93,8 +93,11 @@ services:
       - USERID=${PUID}
       - GROUPID=${PGID}
 
-  owncloud:
-    image: owncloud
+  nextcloud:
+    image: linuxserver/nextcloud:latest
+    environment:
+      - PUID
+      - PGID
 
 #  lychee:
 #    image: kdelfour/lychee-docker:latest
