@@ -10,3 +10,6 @@
 [submodule "docker-nextcloud"]
 	path = docker-nextcloud
 	url = https://github.com/stilllman/docker-nextcloud
+[submodule "docker-image-logitech-media-server"]
+	path = docker-image-logitech-media-server
+	url = git@github.com:stilllman/docker-image-logitech-media-server.git
