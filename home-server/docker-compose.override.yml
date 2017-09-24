@@ -21,6 +21,17 @@ services:
       - "6600:6600"
       - "6680:6680"
 
+  lms:
+    build: ../docker-image-logitech-media-server
+    ports:
+      - 9000:9000
+      - 9090:9090
+      - 3483:3483
+      - 3483:3483/udp
+    volumes:
+      - /home/osboxes/Music:/srv/music
+
+
   transmission:
     build: ../transmission
     ports:

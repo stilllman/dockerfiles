@@ -28,6 +28,9 @@ services:
       - "/usr/local/bin/mopidy.sh"
       - "--snapcast"
 
+  lms:
+    image: stilllman/docker-image-logitech-media-server
+
 
   transmission:
     image: stilllman/transmission:latest
