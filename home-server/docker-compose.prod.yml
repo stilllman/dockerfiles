@@ -14,11 +14,13 @@ services:
     restart: always
 
   lms:
+    environment:
+      - TZ=Europe/Paris
     ports:
-      - 9000:9000
-      - 9090:9090
-      - 3483:3483
-      - 3483:3483/udp
+      - "9000:9000"
+      - "9090:9090"
+      - "3483:3483"
+      - "3483:3483/udp"
     volumes:
       - /mnt/data:/data
     restart: always
