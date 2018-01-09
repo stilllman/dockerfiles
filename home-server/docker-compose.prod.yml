@@ -56,7 +56,7 @@ services:
 
   couchpotato:
     ports:
-      - "5050:5050"
+      - "5151:5050"
     volumes:
       - /home/rancher/appdata/couchpotato:/config
       - /mnt/data/downloads:/downloads
