@@ -106,5 +106,8 @@ services:
     image: homeassistant/home-assistant
     network_mode: host
 
+  hass-configurator:
+    image: causticlab/hass-configurator-docker:x86_64-0.2.4
+
 #  lychee:
 #    image: kdelfour/lychee-docker:latest

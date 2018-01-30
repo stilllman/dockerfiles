@@ -114,6 +114,14 @@ services:
       - /home/rancher/appdata/home-assistant:/config
     restart: always
 
+  hass-configurator:
+    ports:
+      - "3218:3218/tcp"
+    volumes:
+      - /home/rancher/appdata/home-assistant:/config
+      - /home/rancher/appdata/hass-configurator:/hass-config
+    restart: always
+
 #  lychee:
 #    ports:
 #      - "1259:80"
