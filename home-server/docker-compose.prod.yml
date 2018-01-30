@@ -107,6 +107,13 @@ services:
       - /mnt/data:/local-data
     restart: always
 
+  home-assistant:
+    ports:
+      - "8123:8123"
+    volumes:
+      - /home/rancher/appdata/home-assistant:/config
+    restart: always
+
 #  lychee:
 #    ports:
 #      - "1259:80"

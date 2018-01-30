@@ -102,5 +102,9 @@ services:
       - PUID
       - PGID
 
+  home-assistant:
+    image: homeassistant/home-assistant
+    network_mode: host
+
 #  lychee:
 #    image: kdelfour/lychee-docker:latest
