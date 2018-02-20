@@ -110,4 +110,8 @@ services:
     image: causticlab/hass-configurator-docker:x86_64-0.2.4
 
 #  lychee:
-#    image: kdelfour/lychee-docker:latest
+#    image: linuxserver/lychee:latest
+#    environment:
+#      - PUID
+#      - PGID
+

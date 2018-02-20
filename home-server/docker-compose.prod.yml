@@ -125,6 +125,9 @@ services:
 #  lychee:
 #    ports:
 #      - "1259:80"
+#    volumes:
+#      - /home/rancher/appdata/lychee:/config
+#      - /mnt/data/photos:/photos # not used by lychee but by lycheesync
 #    restart: always
 
   logspout:
@@ -134,4 +137,13 @@ services:
     entrypoint:
       - /bin/logspout
       - syslog://logs4.papertrailapp.com:39618
+    restart: always
+
+  portainer:
+    image: portainer/portainer
+    ports:
+      - "2121:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home/rancher/appdata/portainer:/data
     restart: always
