@@ -30,7 +30,7 @@ services:
       - "9091:9091"
       - "51413:51413"
     volumes:
-      - /home/rancher/appdata/transmission:/config
+      - /mnt/appdata/transmission:/config
       - /mnt/data/downloads:/downloads
       - /mnt/data/series:/tv # must be the same as sickrage
       - /mnt/data/films:/movies # must be the same as couchpotato
@@ -38,7 +38,7 @@ services:
 
   plex:
     volumes:
-      - /home/rancher/appdata/plex:/config
+      - /mnt/appdata/plex:/config
       - /mnt/data/series:/data/series
       - /mnt/data/films:/data/films
       - /mnt/data/photos:/data/photos
@@ -49,7 +49,7 @@ services:
     ports:
       - "8081:8081"
     volumes:
-      - /home/rancher/appdata/sickrage:/config
+      - /mnt/appdata/sickrage:/config
       - /mnt/data/downloads:/downloads
       - /mnt/data/series:/tv # must be the same as transmission
     restart: always
@@ -58,7 +58,7 @@ services:
     ports:
       - "5151:5050"
     volumes:
-      - /home/rancher/appdata/couchpotato:/config
+      - /mnt/appdata/couchpotato:/config
       - /mnt/data/downloads:/downloads
       - /mnt/data/films:/movies # must be the same as transmission
     restart: always
@@ -103,7 +103,7 @@ services:
     ports: 
       - "443:443"
     volumes:
-      - /home/rancher/appdata/nextcloud:/config
+      - /mnt/appdata/nextcloud:/config
       - /mnt/data:/local-data
     restart: always
 
@@ -111,22 +111,22 @@ services:
     ports:
       - "8123:8123"
     volumes:
-      - /home/rancher/appdata/home-assistant:/config
+      - /mnt/appdata/home-assistant:/config
     restart: always
 
   hass-configurator:
     ports:
       - "3218:3218/tcp"
     volumes:
-      - /home/rancher/appdata/home-assistant:/config
-      - /home/rancher/appdata/hass-configurator:/hass-config
+      - /mnt/appdata/home-assistant:/config
+      - /mnt/appdata/hass-configurator:/hass-config
     restart: always
 
 #  lychee:
 #    ports:
 #      - "1259:80"
 #    volumes:
-#      - /home/rancher/appdata/lychee:/config
+#      - /mnt/appdata/lychee:/config
 #      - /mnt/data/photos:/photos # not used by lychee but by lycheesync
 #    restart: always
 
@@ -145,5 +145,5 @@ services:
       - "2121:9000"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /home/rancher/appdata/portainer:/data
+      - /mnt/appdata/portainer:/data
     restart: always
