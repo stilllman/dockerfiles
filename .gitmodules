@@ -7,3 +7,9 @@
 [submodule "docker-image-logitech-media-server"]
 	path = docker-image-logitech-media-server
 	url = https://github.com/stilllman/docker-image-logitech-media-server.git
+[submodule "docker-snapserver"]
+	path = docker-snapserver
+	url = ../docker-snapserver
+[submodule "docker-snapclient"]
+	path = docker-snapclient
+	url = ../docker-snapclient
