@@ -29,7 +29,8 @@ services:
       - "--snapcast"
 
   lms:
-    image: stilllman/docker-image-logitech-media-server
+    image: larsks/logitech-media-server:7.9
+#    image: apnar/logitech-media-server:latest
 
 
   transmission:
