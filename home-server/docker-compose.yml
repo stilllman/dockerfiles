@@ -34,7 +34,7 @@ services:
 
 
   transmission:
-    image: stilllman/transmission:latest
+    image: linuxserver/transmission:latest
     environment:
       - PUID
       - PGID
