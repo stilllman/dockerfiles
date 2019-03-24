@@ -2,7 +2,7 @@ version: '2'
 
 networks:
   snapcast_nw:
-  influxdb_nw:
+  # influxdb_nw:
 
 volumes:
   snapcast:
@@ -59,33 +59,33 @@ services:
       - PUID
       - PGID
 
-  influxdb:
-    image: influxdb:alpine
-    networks:
-      - influxdb_nw
+#   influxdb:
+#     image: influxdb:alpine
+#     networks:
+#       - influxdb_nw
 
-  telegraf:
-    image: stilllman/telegraf:latest
-    volumes:
-      - /var/run:/var/run:ro
-#      - /var/run/docker.sock:/var/run/docker.sock:ro # These can't be used
-#      - /var/run/utmp:/var/run/utmp:ro               # otherwise there are issues with utmp
-      - /proc:/hostfs/proc:ro # It seems this is needed, even though I saw no 
-      - /sys:/hostfs/sys:ro   # difference with or without these
-      - /etc:/hostfs/etc:ro   #
-    environment:
-      - HOST_PROC=/hostfs/proc
-      - HOST_SYS=/hostfs/sys
-      - HOST_ETC=/hostfs/etc
-      - HOST_MOUNT_PREFIX=/hostfs
+#   telegraf:
+#     image: stilllman/telegraf:latest
+#     volumes:
+#       - /var/run:/var/run:ro
+# #      - /var/run/docker.sock:/var/run/docker.sock:ro # These can't be used
+# #      - /var/run/utmp:/var/run/utmp:ro               # otherwise there are issues with utmp
+#       - /proc:/hostfs/proc:ro # It seems this is needed, even though I saw no 
+#       - /sys:/hostfs/sys:ro   # difference with or without these
+#       - /etc:/hostfs/etc:ro   #
+#     environment:
+#       - HOST_PROC=/hostfs/proc
+#       - HOST_SYS=/hostfs/sys
+#       - HOST_ETC=/hostfs/etc
+#       - HOST_MOUNT_PREFIX=/hostfs
 
-    networks:
-      - influxdb_nw
+#     networks:
+#       - influxdb_nw
 
-  grafana:
-    image: grafana/grafana:latest
-    networks:
-      - influxdb_nw
+#   grafana:
+#     image: grafana/grafana:latest
+#     networks:
+#       - influxdb_nw
 
   keeweb:
     image: antelle/keeweb
