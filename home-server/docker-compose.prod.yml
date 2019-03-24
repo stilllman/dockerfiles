@@ -31,18 +31,14 @@ services:
       - "51413:51413"
     volumes:
       - /mnt/appdata/transmission:/config
-      - /mnt/data/downloads:/downloads
-      - /mnt/data/series:/tv # must be the same as sickrage
-      - /mnt/data/films:/movies # must be the same as couchpotato
+      - /mnt/data:/data # must be the same as sickrage/plex/sonarr/couchpotato etc.
+                        # Also a single mount point is needed for hardlinks to work
     restart: always
 
   plex:
     volumes:
       - /mnt/appdata/plex:/config
-      - /mnt/data/series:/data/series
-      - /mnt/data/films:/data/films
-      - /mnt/data/photos:/data/photos
-      - /mnt/data/videos:/data/videos
+      - /mnt/data:/data
     restart: always
 
   # sickrage:
@@ -50,16 +46,14 @@ services:
   #     - "8081:8081"
   #   volumes:
   #     - /mnt/appdata/sickrage:/config
-  #     - /mnt/data/downloads:/downloads
-  #     - /mnt/data/series:/tv # must be the same as transmission
+  #     - /mnt/data:/data
   #   restart: always
   sonarr:
     ports:
       - "8989:8989"
     volumes:
       - /mnt/appdata/sonarr:/config
-      - /mnt/data/downloads:/downloads
-      - /mnt/data/series:/tv # must be the same as transmission
+      - /mnt/data:/data
     restart: always
 
   couchpotato:
@@ -67,8 +61,7 @@ services:
       - "5151:5050"
     volumes:
       - /mnt/appdata/couchpotato:/config
-      - /mnt/data/downloads:/downloads
-      - /mnt/data/films:/movies # must be the same as transmission
+      - /mnt/data:/data
     restart: always
 
   jackett:
