@@ -71,6 +71,13 @@ services:
       - /mnt/data/films:/movies # must be the same as transmission
     restart: always
 
+  jackett:
+    ports:
+      - "9117:9117"
+    volumes:
+      - /mnt/appdata/jackett:/config
+    restart: always
+
   # influxdb:
   #   ports:
   #     - "8083:8083"

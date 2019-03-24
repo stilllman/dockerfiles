@@ -63,6 +63,10 @@ services:
       - /home/osboxes/data/films:/movies
       - /home/osboxes/data/downloads:/downloads
 
+  jackett:
+    ports:
+      - "9117:9117"
+
   # influxdb:
   #   ports:
   #     - "8083:8083"
