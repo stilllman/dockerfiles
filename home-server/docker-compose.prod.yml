@@ -45,11 +45,19 @@ services:
       - /mnt/data/videos:/data/videos
     restart: always
 
-  sickrage:
+  # sickrage:
+  #   ports:
+  #     - "8081:8081"
+  #   volumes:
+  #     - /mnt/appdata/sickrage:/config
+  #     - /mnt/data/downloads:/downloads
+  #     - /mnt/data/series:/tv # must be the same as transmission
+  #   restart: always
+  sonarr:
     ports:
-      - "8081:8081"
+      - "8989:8989"
     volumes:
-      - /mnt/appdata/sickrage:/config
+      - /mnt/appdata/sonarr:/config
       - /mnt/data/downloads:/downloads
       - /mnt/data/series:/tv # must be the same as transmission
     restart: always

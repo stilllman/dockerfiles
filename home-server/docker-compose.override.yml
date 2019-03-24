@@ -43,9 +43,15 @@ services:
     volumes:
       - /home/osboxes/data/videos:/data/series
 
-  sickrage:
+  # sickrage:
+  #   ports:
+  #     - "8081:8081"
+  #   volumes:
+  #     - /home/osboxes/data/videos:/tv
+  #     - /home/osboxes/data/downloads:/downloads
+  sonarr:
     ports:
-      - "8081:8081"
+      - "8989:8989"
     volumes:
       - /home/osboxes/data/videos:/tv
       - /home/osboxes/data/downloads:/downloads

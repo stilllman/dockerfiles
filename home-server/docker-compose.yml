@@ -47,8 +47,13 @@ services:
       - PUID
       - PGID
 
-  sickrage:
-    image: linuxserver/sickrage:latest
+  # sickrage:
+  #   image: linuxserver/sickrage:latest
+  #   environment:
+  #     - PUID
+  #     - PGID
+  sonarr:
+    image: linuxserver/sonarr:latest
     environment:
       - PUID
       - PGID
